@@ -70,7 +70,7 @@
   
   /*设置主页预览中博文标题靠左*/
   .postTitle { font-size:27px; font-weight:400; line-height:1.5;  word-wrap:break-word; color:var(--link-color); } 
-  .postTitle2 vertical-middle { font-size:27px; font-weight:400; line-height:1.5;  text-align:center;word-wrap:break-word; color:var(--link-color); } 
+  .postTitle2.vertical-middle { font-size:27px; font-weight:400; line-height:1.5;  text-align:center;word-wrap:break-word; color:var(--link-color); } 
   .postTitle #cb_post_title_url {text-align:center;}
   
   /*修改主页的字体大小*/
@@ -97,6 +97,10 @@
   #cnblogs_post_body h4,#cnblogs_post_body h5,#cnblogs_post_body h6 { padding-top:10px; font-size:16px; font-weight:500; color:var(--heading-color); font-family:SimHei,'Times New Roman',"PingFang SC","Microsoft YaHei",sans-serif; }
   .postBody blockquote { border:none; border-left:4px solid #ddd; color:var(--text-color-secondary); margin:0; padding:0 15px; } 
   .postBody p > a { text-decoration:underline; } 
+  
+  /*修改其文章详情页面中上一篇的位置*/
+  .pre-block {}
+  
   #cnblogs_post_body table { border-collapse:collapse; border-spacing:0; font-size:.875em; margin:0 auto; max-width:100%; width:auto; border:none; border-top:2px solid #222; border-bottom:2px solid #222; } 
   #cnblogs_post_body table thead { border-bottom:1px solid #999; } 
   #cnblogs_post_body table tr { overflow-x: scroll; overflow-y:hidden; text-align:justify; word-break:keep-all; } 
@@ -141,8 +145,8 @@
   /*mypost*/ 
   #myposts .PostList { font-size: 18.667px; color: var(--heading-color); line-height: 2; } 
   #myposts .postDesc2 { font-size: 14px; color: var(--text-color-secondary); text-align: right; } 
-  #cb_post_title_url {text-align:center;color:#627fff;} /*设置单个博文详情页中的标题*/
-  .post {text-align:center;margin-top:0px;}
+  #cb_post_title_url {display:block;text-align:center;color:#627fff;} /*设置单个博文详情页中的标题*/
+  /*.post {text-align:center;margin-top:0px;}*/
   
   /*以下两项用于隐藏上面一个换页菜单*/
   .pager{display:none;}
@@ -153,10 +157,14 @@
   
   
   /*博客侧边栏公告*/
-  #introduction{color:var(--text-color-black);font-size:12px;margin-right:20px}
+  #introduction{color:var(--text-color-black);font-size:12px;margin-right:20px;}
   #highlight{color:var(--primary-color);font-size:12px;}
-  #motto{color:var(--text-color-black);font-size:12px;margin-left:5px}
-  #authorInfo{magin-left:25px;}
+  
+  /*motto是动态打印座右铭的修饰*/
+  #motto{color:var(--primary-color);font-size:12px;margin-left:20px;text-align:center;}
+  #authorInfo{}
+  /*控制个人简介下的a标签的特征*/
+  #authorInfo a {color:var(--text-color-black);font-size:16px;}
   
   /*实现分割线功能*/
   .seperate_line{  
