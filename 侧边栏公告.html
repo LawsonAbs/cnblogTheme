@@ -1,0 +1,12 @@
+<pre id="motto"></pre>
+<!-- 下面这个display:none; 是为了避免一开始就显示出来 -->
+<div style="display:none;" id="w">做一名真诚正直优秀的科技人员
+</div>
+<script language="javascript">
+var index=0;
+var word=document.getElementById("w").innerHTML;
+function type(){
+    document.getElementById("motto").innerText = word.substring(0,index++);
+}
+setInterval(type, 200);
+</script>
