@@ -1,5 +1,5 @@
 /**
-  * @author:me@makergyt.com
+  * @author:lawsonabs
   * @version:2020-07-01
   */
   :root {
@@ -12,10 +12,17 @@
     --text-color-grey:rgba(0, 0, 0, 0.25); /*失效色，无需关注色*/
     --link-color: #555; /*链接色*/
     --code-bg-color:#f0f0f0; /*代码块背景色*/
+    --title-head-color:#627fff;/*文章标题色*/
+    --visited-link-color:#A9A9A9;/*已经访问过链接色*/
   }
   .header { margin:0 auto; position:relative; width:calc(100% - 20px); } 
   body { margin:0; background:var(--body-bg-color); color:var(--text-color); line-height:2; } 
-  a { color:var(--link-color); text-decoration:none; } 
+  a {text-decoration:none; } 
+  
+  /*修改链接样式*/
+  a:hover {color: #FF00FF} /* 鼠标移动du到链接上 */
+  
+  
   #main { align-items:flex-start; display:flex; justify-content:space-between; flex-direction:row-reverse; margin:0 auto; width:calc(100% - 20px); } 
   #page_begin_html { margin:0 auto; position:relative; }
   .header-inner { background:#fff; border-radius:initial; box-shadow:initial; overflow:hidden; padding:0; position:absolute; top:0; width:240px; margin:0 auto; }
@@ -105,7 +112,9 @@
   #cnblogs_post_body table thead { border-bottom:1px solid #999; } 
   #cnblogs_post_body table tr { overflow-x: scroll; overflow-y:hidden; text-align:justify; word-break:keep-all; } 
   #cnblogs_post_body table td,#cnblogs_post_body table th { padding:4px 8px; width:150px; border:none; } 
-  .cnblogs-markdown code { background-color:var(--code-bg-color) !important; border:none !important; font-weight: 300; } 
+  
+  /*添加行代码的背景颜色为#c7254e => 效果同csdn*/
+  .cnblogs-markdown code { background-color:var(--code-bg-color) !important; color:#c7254e;border:none !important; font-weight: 300; } 
   .cnblogs-markdown .hljs { font-size:14px !important; padding:10px !important; } 
   #cnblogs_post_body img { display:block; margin:0 auto; } 
   .footnotes-meta { margin:2em 0 0 0; } 
@@ -162,7 +171,7 @@
   
   /*motto是动态打印座右铭的修饰*/
   #motto{color:var(--primary-color);font-size:12px;margin-left:20px;text-align:center;}
-  #authorInfo{}
+  #focus {margin-left:70px;font-size:16px;text-align:center;color:var(--text-color-black)}
   /*控制个人简介下的a标签的特征*/
   #authorInfo a {color:var(--text-color-black);font-size:16px;}
   
@@ -182,8 +191,14 @@
   /*修改随笔样式*/
   #mainContent .PostListTitle{text-align:center;}
   
-  /*控制只显示底部的翻页功能*/
-  
+  /*管理签名样式*/
+  #MySignature {font-size:16px;text-align:right;color:var(--text-color);}
   
   /*修改翻页功能居中*/
   .Pager{text-align:center;}
+  
+  /*修改博客详情页中的列表字体大小*/
+  #cnblogs_post_body ul li{font-size:16px;}
+  
+  /*修改关注的红心*/
+  .fa.fa-heart{color:#FF0000;}
