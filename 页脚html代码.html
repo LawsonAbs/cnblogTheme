@@ -5,7 +5,7 @@
     gallery: '1796566'
   }
 </script>
-<!-- 下方内容请勿擅自修改，除非知道明确含义，如进行完善和扩展，请fork源码(https://github.com/MakerGYT/cnblogs-theme-next)后提交pull request;-->
+
 <!-- 引入在线字体-->
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Noto Serif SC:wght@400;500;700&display=swap&subset=latin,latin-ext">
@@ -154,7 +154,7 @@
     siteAuthor.append('<div class="site-state">' + '</div>')
    //siteAuthor.append('<div class="site-state">' + $('.focus').html() + '</div>')
     var links = $('<div class="links-of-author"></div>')
-    links.append('<div id=authorInfo><a href="https://msg.cnblogs.com/send/'+ config.author+'">联系作者：<i class="fa fa-fw fa-envelope"></i></a></br><a href="https://cnblogs.com/lawsonabs/p/" style="color:var(--primary-color);font-size:16px;">关于作者：<i class="fa fa-fw fa-address-card-o" aria-hidden="true"></i></a></br><a>加我微信：lawsonabs</a></div>')
+    links.append('<div id=authorInfo><a href="https://msg.cnblogs.com/send/'+ config.author+'" style="font-size:16px;">联系作者：<i class="fa fa-fw fa-envelope"></i></a></br><a href="https://www.cnblogs.com/lawsonabs/p/13596571.html" style="font-size:16px;">关于作者：<i class="fa fa-fw fa-address-card-o" aria-hidden="true"></i></a></br></div>')
 // links.append('<div class="seperate_line">智慧分割线</div>')
    //下面原本是添加个人简介的，后来删除了
     $('#blog-news').prepend(siteAuthor.append(links))
@@ -162,13 +162,15 @@
 
 
   // 设置导航区
+  //这个地方会影响导航区的切换（调整阴影部分）的功能
   function setNav() {
     var url = window.location.href;
     $('.brand').attr('href', '/' + blogSlug)
     $('.site-title').text(config.siteTitle)
     $('.menu-item-home a:first').attr('href', '/' + blogSlug)
-    $('.menu-item-archives a:first').attr('href', '/' + blogSlug+'/p')
-    if(config.gallery) {
+    //$('.menu-item-tags a:first').attr('href', '/' + blogSlug+'/p')  //这里自动在链接后面加了p，不是想要的结果，修改如下
+    $('.menu-item-tags a:first').attr('href', '/' + blogSlug+'/tag')
+   if(config.gallery) {
       $('.menu-item-gallery a:first').attr('href', '/' + blogSlug+'/gallery/'+config.gallery+'.html')
       $('.menu-item-gallery').css('display','block')
 
@@ -177,10 +179,10 @@
         $('.menu-item-gallery').addClass('menu-item-active')
       }
     }
-    
-    if(/(\/p)$/.test(url)) {
+    //注意这里的/tag 跟上面的tag是有关系的
+    if(/(\/tag)$/.test(url)) {
       $('.menu-item-home').removeClass('menu-item-active')
-      $('.menu-item-archives').addClass('menu-item-active')
+      $('.menu-item-tags').addClass('menu-item-active')
     } 
   }
 
