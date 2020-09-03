@@ -1,3 +1,7 @@
+<!-- 添加关注按钮 -->
+<a  id=focus href="javascript:void(0)" onclick="follow('bfe5f0e8-086c-4389-e892-08d7f1c799c8')">关注博主：<i class="fa fa-heart" aria-hidden="true"></i></a>
+
+<!-- *************分割线******************* -->
 <pre id="motto"></pre>
 <!-- 下面这个display:none; 是为了避免一开始就显示出来 -->
 <div style="display:none;" id="w">做一名真诚正直优秀的科技人员
@@ -9,4 +13,10 @@ function type(){
     document.getElementById("motto").innerText = word.substring(0,index++);
 }
 setInterval(type, 200);
+
+//===========设置博客园图标  => 即浏览器顶部页面的那个图标
+var linkObject = document.createElement('link');
+linkObject.rel = "shortcut icon";
+linkObject.href = "https://files.cnblogs.com/files/lawsonabs/lawsonabs.ico";
+document.getElementsByTagName("head")[0].appendChild(linkObject);
 </script>
